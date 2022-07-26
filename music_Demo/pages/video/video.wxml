@@ -1,0 +1,34 @@
+<view class="videoContainer">
+  <!-- 头部区域 -->
+  <view class="header">
+    <image src="/static/images/video/video.jpg"></image>
+    <view class="search">
+    搜索
+    </view>
+    <image src="/static/images/logo.png"></image>
+  </view>
+  <!-- 导航区域 -->
+  <scroll-view scroll-x class="navScroll" enable-flex scroll-into-view="{{'scroll'+navId}}" scroll-with-animation>
+    <view id="{{'scroll'+item.id}}" class="navItem" wx:for="{{videoGroupList}}" wx:key="id">
+      <view class="navContent {{navId === item.id?'active':''}}" bindtap="changeNav" id="{{item.id}}">
+      {{item.name}}
+      </view>
+    </view>
+  </scroll-view>
+  <!-- 视频列表区域 -->
+  <scroll-view scroll-y class="videoScroll">
+    <view class="videoItem" wx:for="{{videoList}}" wx:key = "id">
+      <video wx:if="{{videoId === item.data.vid}}" class="common"
+       src="{{item.data.urlInfo.url}}"
+       bindplay="handlePlay"
+       id="{{item.data.vid}}"
+       poster="{{item.data.coverUrl}}"
+       object-fit="fill"
+       bindtimeupdate="handleTimeUpdate"
+       bindended="handleEnded"
+       ></video>
+       <!-- 性能优化，使用image图片代替video标签 -->
+       <image  bindtap="handlePlay" wx:else class="common" src="{{item.data.coverUr}}"></image>
+    </view>
+  </scroll-view>
+</view>

@@ -1,0 +1,57 @@
+.videoContainer .header{
+  display: flex;
+  padding: 5rpx;
+}
+.videoContainer .header image{
+  width: 60rpx;
+  height: 60rpx;
+}
+.videoContainer .header .search{
+  border: 1rpx solid #eee;
+  flex: 1;
+  margin: 0 20rpx;
+  font-size: 26rpx;
+  text-align: center;
+  line-height: 60rpx;
+  color: #d43c33;
+}
+/* 导航区域 */
+.navScroll{
+  display: flex ;
+  white-space: nowrap;
+  height: 70rpx;
+}
+.navScroll .navItem{
+  padding: 0 30rpx;
+  font-size: 28rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+.navScroll .navContent{
+  height: 60rpx; 
+  box-sizing: border-box;
+}
+.navItem .active{
+  border-bottom: 1rpx solid #d43c33
+}
+/* 视频列表样式 */ 
+.videoScroll{
+  margin-top: 10rpx;
+  /* calc()动态计算css宽高 运算符两侧要加空格，否则计算会失效 */
+  /* 视口单位:vh vw 1vh=1%的视口高度 1vw=1%的视口宽度 */
+  height: calc(100vh - 152rpx);
+}
+.videoItem{
+  padding:0 3%;
+}
+/* .videoItem video{
+  width: 100%;
+  height: 360rpx;
+  border-radius: 10rpx;
+} */
+.videoItem .common{
+  width: 100%;
+  height: 360rpx;
+  border-radius: 10rpx;
+  border: 1rpx solid #eee;
+}
